@@ -26,6 +26,10 @@ createElement("img", {src: coverImage});
 createElement("img", {src: portalImage});
 createElement("img", {src: qtttcImage});
 
+//embeds
+//social icons
+const iframeel = document.createElement("iframe");
+
 function createElement(elementType, options) {
     const element = document.createElement(elementType);
     if(options.hasOwnProperty('text')){
