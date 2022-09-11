@@ -28,7 +28,7 @@ createElement("img", {src: qtttcImage});
 
 //embeds
 //social icons
-const iframeel = document.createElement("iframe");
+createElement("iframe", {src: "https://open.spotify.com/embed/track/4MVSpERzPckgj9CfBVMyvd?utm_source=generator"});
 
 function createElement(elementType, options) {
     const element = document.createElement(elementType);
