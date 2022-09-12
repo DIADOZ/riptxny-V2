@@ -1,26 +1,32 @@
 .spotify-embed {
-    width: 50%;
-    height: 80;
+    width: 100%;
+    max-width: 660px;
+    height: 80px;
     
+    border: 0;
     border-radius: 12px;
 }
 
 .youtube-embed {
-    width: 560;
-    height: 315;
+    width: 560px;
+    height: 315px;
+
+    border: 0;
 }
 
 .apple-embed {
     width: 100%;
     max-width: 660px;
-    height: 175;
+    height: 175px;
 
     overflow: hidden;
     background: transparent;
+    border: 0;
 }
 
 .bandcamp-embed {
     width: 100%;
+    max-width: 660px;
     height: 120px;
 
     border: 0;
