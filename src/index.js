@@ -1,12 +1,12 @@
 import './style.css';
 import './controller.js';
-// import './assets/favicon.ico';
-// import './assets/favicon-16x16.png';
-// import './assets/favicon-32x32.png';
 import djImage from './assets/images/rip-txny-dj.jpeg';
 import coverImage from './assets/images/rip-txny-cover.jpg';
 import portalImage from './assets/images/portal-cover.jpg';
 import qtttcImage from './assets/images/qtttc-cover.jpg';
+import instagramLogo from './assets/icons/instagram-logo.svg';
+import twitterLogo from './assets/icons/twitter-logo.svg';
+import linktreeLogo from './assets/icons/linktree-logo.svg';
 
 const bio = `Felipe González Avila also known as RIP TXNY is an Artist, 
 Music Producer and DJ from Santiago, Chile. He has collaborated with 
@@ -47,6 +47,7 @@ createElement('iframe', {
 	class: 'spotify-embed',
 	src: 'https://open.spotify.com/embed/track/4MVSpERzPckgj9CfBVMyvd?utm_source=generator',
 	allow: 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture',
+	loading: 'lazy',
 });
 createElement('iframe', {
 	title: 'Youtube video player for Portal',
@@ -68,6 +69,21 @@ createElement('iframe', {
 	class: 'bandcamp-embed',
 	title: 'Bandcamp player for Portal',
 	src: 'https://bandcamp.com/EmbeddedPlayer/track=2210751335/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=small/transparent=true/',
+});
+
+createElement('img', {
+	title: 'RIPTXNY Instagram',
+	src: instagramLogo,
+});
+
+createElement('img', {
+	title: 'RIPTXNY Twitter',
+	src: twitterLogo,
+});
+
+createElement('img', {
+	title: 'RIPTXNY Linktree',
+	src: linktreeLogo,
 });
 
 /**
@@ -104,6 +120,9 @@ function createElement(elementType, options) {
 	}
 	if (options.hasOwnProperty('allowfullscreen') && options.allowfullscreen) {
 		element.setAttribute('allowfullscreen', '');
+	}
+	if (options.hasOwnProperty('loading')) {
+		element.setAttribute('loading', options.loading);
 	}
 	document.body.appendChild(element);
 	return element;
