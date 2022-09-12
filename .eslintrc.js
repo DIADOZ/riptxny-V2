@@ -15,6 +15,8 @@ module.exports = {
 		'indent': ['error', 'tab'],
 		'no-tabs': 'off',
 		'require-jsdoc': 'off',
+		'valid-jsdoc': 'off',
+		'max-len': 'off',
 	},
 	'plugins': [
 		'jsdoc',
