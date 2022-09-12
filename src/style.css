@@ -1,3 +1,8 @@
+.model-container {
+    width: 600px;
+    height: 600px;
+}
+
 .spotify-embed {
     width: 100%;
     max-width: 660px;
