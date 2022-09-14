@@ -17,6 +17,7 @@ module.exports = {
 		'require-jsdoc': 'off',
 		'valid-jsdoc': 'off',
 		'max-len': 'off',
+		'no-unused-vars': 'off',
 	},
 	'plugins': [
 		'jsdoc',
