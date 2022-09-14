@@ -1,5 +1,5 @@
 import './style.css';
-import './controller.js';
+import createModelElement from './controller.js';
 import djImage from './assets/images/rip-txny-dj.jpeg';
 import coverImage from './assets/images/rip-txny-cover.jpg';
 import portalImage from './assets/images/portal-cover.jpg';
@@ -19,11 +19,11 @@ playing an opening set for King Woman at The Music Hall of Williamsburg in New
 York. Felipe now resides in NYC, active in a mesh of different cultural 
 communities through his music and pursuing his personal artistic career.`;
 
-createElement('p', {
-	text: bio,
-});
 createElement('h1', {
 	text: 'RIP TXNY',
+});
+createElement('p', {
+	text: bio,
 });
 createElement('img', {
 	title: 'RIPTXNY on stage',
@@ -32,6 +32,8 @@ createElement('img', {
 createElement('img', {
 	title: 'Cover for RIPTXNY EP',
 	src: coverImage,
+	// srcset: 'rip-txny-cover-small.jpg 200w, rip-txny-cover-medium.jpg 400w, rip-txny-large.jpg 800w, rip-txny-cover.jpg 1200w',
+	// sizes: '(min-width: 500px) 400px, (min-width: 700px) 800px, 1200px',
 });
 createElement('img', {
 	title: 'Cover for Portal',
@@ -42,45 +44,41 @@ createElement('img', {
 	src: qtttcImage,
 });
 
-createElement('iframe', {
-	title: 'Spotify player for Portal',
-	class: 'spotify-embed',
-	src: 'https://open.spotify.com/embed/track/4MVSpERzPckgj9CfBVMyvd?utm_source=generator',
-	allow: 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture',
-	loading: 'lazy',
-});
-createElement('iframe', {
-	title: 'Youtube video player for Portal',
-	class: 'youtube-embed',
-	src: 'https://www.youtube.com/embed/Ei6mJ2JIPI4',
-	allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
-});
-
-createElement('iframe', {
-	title: 'Apple music player for Portal',
-	class: 'apple-embed',
-	src: 'https://embed.music.apple.com/us/album/portal/1633092892?i=1633092910',
-	allow: 'autoplay *; encrypted-media *; fullscreen *; clipboard-write',
-	sandbox: 'allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation',
-});
-
-
-createElement('iframe', {
-	class: 'bandcamp-embed',
-	title: 'Bandcamp player for Portal',
-	src: 'https://bandcamp.com/EmbeddedPlayer/track=2210751335/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=small/transparent=true/',
-});
+// createElement('iframe', {
+// 	title: 'Spotify player for Portal',
+// 	class: 'spotify-embed',
+// 	src: 'https://open.spotify.com/embed/track/4MVSpERzPckgj9CfBVMyvd?utm_source=generator',
+// 	allow: 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture',
+// 	loading: 'lazy',
+// });
+// createElement('iframe', {
+// 	title: 'Youtube video player for Portal',
+// 	class: 'youtube-embed',
+// 	src: 'https://www.youtube.com/embed/Ei6mJ2JIPI4',
+// 	allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+// });
+// createElement('iframe', {
+// 	title: 'Apple music player for Portal',
+// 	class: 'apple-embed',
+// 	src: 'https://embed.music.apple.com/us/album/portal/1633092892?i=1633092910',
+// 	allow: 'autoplay *; encrypted-media *; fullscreen *; clipboard-write',
+// 	sandbox: 'allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation',
+// });
+// createElement('iframe', {
+// 	class: 'bandcamp-embed',
+// 	title: 'Bandcamp player for Portal',
+// 	src: 'https://bandcamp.com/EmbeddedPlayer/track=2210751335/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=small/transparent=true/',
+// });
+createModelElement();
 
 createElement('img', {
 	title: 'RIPTXNY Instagram',
 	src: instagramLogo,
 });
-
 createElement('img', {
 	title: 'RIPTXNY Twitter',
 	src: twitterLogo,
 });
-
 createElement('img', {
 	title: 'RIPTXNY Linktree',
 	src: linktreeLogo,
@@ -123,6 +121,12 @@ function createElement(elementType, options) {
 	}
 	if (options.hasOwnProperty('loading')) {
 		element.setAttribute('loading', options.loading);
+	}
+	if (options.hasOwnProperty('srcset')) {
+		element.setAttribute('srcset', options.srcset);
+	}
+	if (options.hasOwnProperty('sizes')) {
+		element.setAttribute('sizes', options.sizes);
 	}
 	document.body.appendChild(element);
 	return element;
