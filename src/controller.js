@@ -17,7 +17,7 @@ const clock = new THREE.Clock();
 /**
  * Initialize model element
  */
-function init() {
+export default function createModelElement() {
 	container = document.createElement('div');
 	container.classList.add('model-container');
 	document.body.appendChild(container);
@@ -41,9 +41,10 @@ function init() {
  * Define camera in scene
  */
 function createCamera() {
-	camera = new THREE.OrthographicCamera(-0.8, 0.8, 0.8, -0.8, 0.1, 100);
-	camera.position.x = -2;
-	camera.position.y = 1.8;
+	camera = new THREE.OrthographicCamera(-.6, .6, .6, -.6, 1, 100);
+	camera.position.x = -5;
+	camera.position.y = 4;
+	camera.position.z = 0;
 }
 
 /**
@@ -99,15 +100,10 @@ function loadModels() {
  */
 function createRenderer() {
 	// create a WebGLRenderer and set its width and height
-	renderer = new THREE.WebGLRenderer({alpha: true});
-	renderer.setClearColor(new THREE.Color(0xff0000));
-	renderer.setClearAlpha(0);
+	renderer = new THREE.WebGLRenderer({antialias: true});
 	renderer.setSize(container.clientWidth, container.clientHeight);
 
 	renderer.setPixelRatio(window.devicePixelRatio);
-
-	renderer.gammaFactor = 2.2;
-	renderer.gammaOutput = true;
 
 	container.appendChild(renderer.domElement);
 }
@@ -161,4 +157,3 @@ function onWindowResize() {
 
 window.addEventListener('resize', onWindowResize);
 
-init();
