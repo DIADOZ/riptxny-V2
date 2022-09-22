@@ -18,9 +18,8 @@ const clock = new THREE.Clock();
  * Initialize model element
  */
 export default function createModelElement() {
-	container = document.createElement('div');
+	container = document.querySelector('#model-container');
 	container.classList.add('model-container');
-	document.body.appendChild(container);
 
 	scene = new THREE.Scene();
 
