@@ -33,6 +33,10 @@ const config = {
 				},
 			},
 			{
+				test: /\.html$/i,
+				loader: 'html-loader',
+			},
+			{
 				test: /\.css$/i,
 				use: [stylesHandler, 'css-loader'],
 			},
@@ -51,7 +55,7 @@ const config = {
 		port: process.env.PORT || 3000,
 		static: path.resolve(__dirname, './dist'),
 		open: true,
-		hot: true,
+		hot: false,
 		historyApiFallback: true,
 		compress: true,
 	},
